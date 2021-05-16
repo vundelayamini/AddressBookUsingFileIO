@@ -10,11 +10,11 @@ namespace AddressBookFileIO
     {
         public void WriteToFile(Dictionary<string, AddressBook> addressBookDictionary)
         {
-             string FilePath = @"C:\Users\mahesh\source\repos\AddressBookFileIO\AddressBookFileIO\Sample.txt";
+             string FilePath = @"C:\Users\mahesh\source\repos\AddressBookFileIO\AddressBookFileIO\AddressBookRecord.txt";
              StreamWriter writer = new StreamWriter(FilePath, true);
             foreach (AddressBook addressBookobj in addressBookDictionary.Values)
             {
-                foreach (Contact contact in addressBookobj.addressBook.Values)
+                foreach (Contact contact in addressBookobj.AddressBook.Values)
                 {
                     writer.WriteLine(contact.ToString());
                 }
