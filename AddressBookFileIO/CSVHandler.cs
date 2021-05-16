@@ -10,9 +10,9 @@ namespace AddressBookFileIO
 {
     class CSVHandler
     {
-        private string filePath = @"C:\Users\mahesh\Desktop\AddressBookUsingFileIO\AddressBookUsingFileIO\AddressBookFileIO\Utility\AddressBook.csv";
-        public void WriteToFile(Dictionary<string, AddressBook> addressBookDictionary)
+        public void WriteToFile(Dictionary<string, AddressBook> addressBookDictionary)//Constructor
         {
+            string filePath = @"C:\Users\mahesh\source\repos\AddressBookFileIO\AddressBookFileIO\Utility\Addressbook.csv";//path for csv file
             using (StreamWriter writer = new StreamWriter(filePath))
             {
                 using (CsvWriter csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
@@ -27,8 +27,9 @@ namespace AddressBookFileIO
                 }
             }
         }
-        public void ReadFromFile()
+        public void ReadFromFile()//read the data from file
         {
+            Stream filePath = null;
             using (StreamReader reader = new StreamReader(filePath))
             {
                 using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
@@ -40,9 +41,9 @@ namespace AddressBookFileIO
                         Console.WriteLine(contact.ToString());
                     }
                 }
-
             }
-        }
 
+        }
     }
 }
+
